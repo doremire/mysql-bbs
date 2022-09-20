@@ -1,0 +1,65 @@
+body,
+p,
+ul,
+td,
+th {
+    margin: inherit;
+    padding: inherit;
+}
+
+li {
+    background-color: #eeeeee;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+    width: 500px;
+
+}
+
+form {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: initial;
+}
+
+input {
+    height: 40px;
+    width: 300px;
+}
+
+button {
+    height: 40px;
+    width: 100px;
+    position: relative;
+    top: 1.5px;
+    margin-right: 0;
+}
+
+/* スマホ　===================================== */
+
+@media screen and (max-width:480px) {
+
+    li {
+        width: 300px;
+
+    }
+
+    form {
+        width: 300px;
+    }
+
+    input {
+        height: 40px;
+        width: 200px;
+    }
+
+    button {
+        height: 40px;
+        width: 90px;
+        margin-right: 0;
+    }
+
+
+}
