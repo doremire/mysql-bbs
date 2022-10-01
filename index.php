@@ -4,20 +4,17 @@ try {
     // DB接続
     $pdo = new PDO(
         // ホスト名、データベース名
-        'mysql:host=host;dbname=db;charset=utf8;',
-        'user', // ユーザー名
-        'pass'// パスワード
-    );
-   
+        'mysql:host=host;dbname=db;charset=utf8;','user','pass');
+        // ユーザー名
 
+        // パスワード
+        
+        // レコード列名をキーとして取得させる
+        // [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
     
 
-    // レコード列名をキーとして取得させる
-    // [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
-
-
-
-    $stmt = $pdo->prepare('SELECT COUNT(*) AS num FROM post');
+  
+   $stmt = $pdo->prepare('SELECT COUNT(*) AS num FROM post');
 
     $stmt->execute();
 
@@ -62,10 +59,10 @@ try {
 
 
     // パラメータ
-    if (isset($_POST['commit'])) {
+    if(isset($_POST['commit'])){
         $commit = $_POST['commit'];
-
-
+       
+        
         // 値をセット
         $stmt->bindValue(':text', $commit);
     }
@@ -94,8 +91,7 @@ try {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css.min.css" />
+　　<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css.min.css"/>
     <link rel="stylesheet" href="style.css">
     <title>掲示板</title>
 </head>
@@ -127,7 +123,7 @@ try {
             i++;
         }
 
-        const placeText = ['個人情報は投稿してはいけません', '他人を誹謗、中傷してはいけません', '公序良俗に反する発言はしないでください']
+        const placeText = ['個人情報は投稿してはいけません','他人を誹謗、中傷してはいけません','公序良俗に反する発言はしないでください']
 
         let randomInput = Math.floor(Math.random() * 3)
         console.log(randomInput);
@@ -136,5 +132,4 @@ try {
         place.placeholder = placeText[randomInput];
     </script>
 </body>
-
 </html>
